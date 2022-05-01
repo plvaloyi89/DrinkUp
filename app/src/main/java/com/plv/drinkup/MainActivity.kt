@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.plv.drinkup.view.randomPick
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.random_choice).apply {
             text = "Random Choice"
         }.setOnClickListener {
-            val randomChoice = Intent(this,randomPick::class.java)
+            val randomChoice = Intent(this, randomPick::class.java)
             startActivity(randomChoice)
         }
 

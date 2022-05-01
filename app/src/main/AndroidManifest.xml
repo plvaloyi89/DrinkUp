@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DrinkUp">
         <activity
-            android:name=".randomPick"
+            android:name=".view.randomPick"
             android:exported="false" />
         <activity
-            android:name=".CocktailList"
+            android:name=".view.CocktailList"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -4,62 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".randomPick">
+    tools:context=".view.randomPick">
 
     <ImageView
         android:id="@+id/randomCocktailImage"
-        android:layout_width="198dp"
-        android:layout_height="191dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="369dp"
+        android:layout_height="282dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/randomCocktailName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/randomCocktailName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="TextView"
+        android:layout_marginBottom="1dp"
+
+        android:textSize="15dp"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/randomCocktailCategory"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toEndOf="@+id/randomCocktailImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.018"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/randomCocktailCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:layout_marginBottom="1dp"
+        android:text="Category"
+        app:layout_constraintBottom_toTopOf="@+id/random_alcoholic_non_alcoholic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toEndOf="@+id/randomCocktailImage"
-        app:layout_constraintTop_toBottomOf="@+id/randomCocktailName" />
+        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/random_alcoholic_non_alcoholic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:text="TextView"
+        android:layout_marginBottom="18dp"
+        android:text="Tags"
+        app:layout_constraintBottom_toTopOf="@+id/random_ingredients_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
-        app:layout_constraintStart_toEndOf="@+id/randomCocktailImage"
-        app:layout_constraintTop_toBottomOf="@+id/randomCocktailCategory" />
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/random_instructions"
         android:layout_width="395dp"
-        android:layout_height="244dp"
-        android:layout_marginBottom="52dp"
+        android:layout_height="161dp"
+        android:layout_marginBottom="24dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/random_ingredients"
+        android:layout_width="396dp"
+        android:layout_height="121dp"
+        android:layout_marginBottom="34dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/random_instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/random_ingredients_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:textSize="15dp"
+        android:text="Ingredients"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/random_ingredients"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/random_instructions_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Instructions"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/random_instructions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
