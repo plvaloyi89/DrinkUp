@@ -1,12 +1,13 @@
 package com.plv.drinkup.viewModel
 
 import android.os.Build
+import android.provider.Settings.System.getString
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
 import com.google.gson.GsonBuilder
+import com.plv.drinkup.R
 import com.plv.drinkup.data.DrinkData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +29,7 @@ class SharedViewModel : ViewModel() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun randomDrink(drinkType:String){
         viewModelScope.launch(Dispatchers.IO) {
-            val result = process(drinkType)
+            val result = process("${drinkType}.php")
             val gson = GsonBuilder().create()
             if (result != null) {
                 try {
@@ -55,14 +56,10 @@ class SharedViewModel : ViewModel() {
     @RequiresApi(Build.VERSION_CODES.O)
     fun process(category:String): String? {
         var result: String? = null
-
         try {
             val client = OkHttpClient()
             val request = Request.Builder()
-                .url("https://the-cocktail-db.p.rapidapi.com/${category}.php")
-                .get()
-                .addHeader("X-RapidAPI-Host", "the-cocktail-db.p.rapidapi.com")
-                .addHeader("X-RapidAPI-Key", "f7893c3365msh9f7c977902a6dd6p16501fjsnb987c6345ee5")
+                .url("https://www.thecocktaildb.com/api/json/v1/1/${category}")
                 .build()
             val response = client.newCall(request).execute()
             result = response.body?.string();
